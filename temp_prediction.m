@@ -1,8 +1,13 @@
-%how fast (celsius per second) does the temp change? : Tf - Ti / tf - ti
-%print (every sec) rate of change, current temp, temp prediction in 300 sec assuming same rate of change (constant)
-%if temp is within 18-24 : constant green light
-%if rate of change is +4C/min or greater : constant red
-%if rate of change is -4C/min or lower : constant yellow
+% The function measures a temperature using thermistor.
+% Every second, there is a temperature update to the data (which stores temperature each second).
+% The first 15 seconds is the calibration stage, where data of current temperature is collected to smooth the future work of the function
+% After the calibration stage, the function compares every new temperature value with the first measured value, and if the time exceeds 30 seconds, then it compares it to the value 30 seconds before to keep it relevant.
+% That comparison is made in order to calculate the rate of change of temperature, so that it is possible to predict the approximate temperature in 5 minutes.
+% The function shows all relevant data in console.
+% If the rate of change of temperature is within (-4 to +4) °C/min range, the green LED shows constant light, while all others are shut down. 
+% If the rate of change of temperature is greater or equal to +4 °C/min, then red LED shows constant light, while all others are shut down
+% If the rate of change of temperature is below or equal to -4 °C/min, then yellow LED shows constant light, while all others are shut down.
+
 
 function predicting = temp_prediction(a)
 

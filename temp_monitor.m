@@ -1,3 +1,13 @@
+% The function measures the temperature with the help of thermistor. 
+% Every second, it receives output voltage from thermistor, which is then
+% used to obtain current temperature in Celsius using a formula which is based on certain thermistor parameters.
+% It then plots a graph of temperature vs time, which is updated every other second. If the temperature is withing the range of 18-24 °C, the green LED will show a constant light.
+% In case if the temperature is greater than 24 °C, the red LED will blink 4 times, pausing for 0.25s in-between.
+% After that, another temperature update will be conducted.
+% If the temperature is below 18 °C, then the yellow LED will blink 2 times, pausing for 0.5s in-between, and conducting temperature update afterwards.
+
+
+
 function monitoring = temp_monitor(a)
     monitoring = true;
 
