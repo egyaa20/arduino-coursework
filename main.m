@@ -4,6 +4,8 @@
 
 %% PRELIMINARY TASK - ARDUINO AND GIT INSTALLATION [10 MARKS]
 
+% https://github.com/egyaa20/arduino-coursework
+
 if exist('a', 'var') % Check if a is alredy defined in the workspace
     clear a; % If yes, then clear it before defining it again, because otherwise there is error
 end
